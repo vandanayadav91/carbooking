@@ -27,5 +27,11 @@ urlpatterns = [
     path('blog/',views.BlogPage),
     path('contact/',views.contactPage),
     path('Service/',views.ServicePage),
+
+    path('feature/',views.featurepage),
+    path('car/',views.carpage),
+    path('team/',views.teampage),
+    path('testimonial/',views.testimonialpage),
+    path('numpages/',views.numpages),
    
 ]

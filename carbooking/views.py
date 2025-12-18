@@ -31,5 +31,22 @@ def ServicePage(request):
     return render(request,"Service.html")
 
 
+def featurepage(request):
+    return render(request,"feature.html")
+
+def carpage(request):
+    return render(request,"car.html")
+
+
+def teampage(request):
+    return render(request,"team.html")
+
+def testimonialpage(request):
+    return render(request,"testimonial.html")
+
+def numpages(request):
+    return render(request,"numpages.html")
+
+
 
 
