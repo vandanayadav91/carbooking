@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from car_admin.models import Service,Vehicle,Blog,Numbering,centalProcess
+
+
 
 # def HomePage(request):
 #     return HttpResponse("Hello welcome to home page")
@@ -16,19 +19,43 @@ from django.shortcuts import render
 
 
 def HomePage(request):
-    return render(request,"index.html")
+    serviceData=Service.objects.all()
+    vehicleData=Vehicle.objects.all()
+    blogData=Blog.objects.all()
+    NumberingData=Numbering.objects.all()
+    centalProcessData=centalProcess.objects.all()
+    data={
+        'service_show':serviceData,
+        'vehicle_show':vehicleData,
+        'blog_show':blogData,
+        'num_show':NumberingData,
+        'centalProcess_show':centalProcessData,
+    }
+
+    return render(request,"index.html",data)
 
 def AboutPage(request):
+    
     return render(request,"About.html")
 
 def BlogPage(request):
-    return render(request,"Blog.html")
+    NumberingData=Numbering.objects.all()
+    centalProcessData=centalProcess.objects.all()
+    data={
+        'num_show':NumberingData,
+        'centalProcess_show':centalProcessData,
+    }
+    return render(request,"Blog.html",data)
 
 def contactPage(request):
     return render(request,"Contact.html")
 
 def ServicePage(request):
-    return render(request,"Service.html")
+    serviceData=Service.objects.all()
+    data={
+        'service_show':serviceData,
+    }
+    return render(request,"Service.html",data)
 
 
 def featurepage(request):

@@ -6,13 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>website</title>
+    <title>Cental Blog & News in a car center</title>
+    <link rel="icon" href="{% static 'images/fav.svg' %}">
     <link href="{% static 'css/all.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
 </head>
 
 <body>
@@ -73,7 +74,7 @@
                                  <a href="{% url 'car' %}"><li>Our cars</li></a>
                                 <a href="{% url 'team' %}"><li>Our Team</li></a>
                                 <a href="{% url 'testimonial' %}"><li>Testimonial</li></a>
-                                <a href="{% url 'numpages' %}"></a><li>404 Page</li>
+                                <a href="{% url 'numpages' %}"><li>404</li></a>
                             </ul>
                         </li>
                    
