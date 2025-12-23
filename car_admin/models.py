@@ -83,5 +83,19 @@ class Booking(models.Model):
     
     booking_desc=models.TextField()
 
+# create form
+
+class HeroForm(models.Model):
+    car_type=models.CharField(max_length=100)
+    pickup_location=models.CharField(max_length=100)
+    drop_location=models.CharField(max_length=100)
+    pickup_date=models.CharField(max_length=100)
+    pickup_time=models.CharField(max_length=100)
+    drop_date=models.CharField(max_length=100)
+    drop_time=models.CharField(max_length=100)
+    
+
+    
+
 
     

@@ -1,6 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from car_admin.models import Service,Vehicle,Blog,Numbering,centalProcess
+from django.shortcuts import render,redirect
+from car_admin.models import Service,Vehicle,Blog,Numbering,centalProcess,HeroForm
 
 
 
@@ -19,6 +19,18 @@ from car_admin.models import Service,Vehicle,Blog,Numbering,centalProcess
 
 
 def HomePage(request):
+    if request.method == "POST":
+     HeroForm.objects.create(
+            car_type=request.POST.get('car_type'),
+            pickup_location=request.POST.get('pickup_location'),
+            drop_location=request.POST.get('drop_location'),
+            pickup_date=request.POST.get('pickup_date'),
+            pickup_time=request.POST.get('pickup_time'),
+            drop_date=request.POST.get('drop_date'),
+            drop_time=request.POST.get('drop_time'),
+     )
+     return redirect('sucess')
+    
     serviceData=Service.objects.all()
     vehicleData=Vehicle.objects.all()
     blogData=Blog.objects.all()
@@ -73,6 +85,9 @@ def testimonialpage(request):
 
 def numpages(request):
     return render(request,"numpages.html")
+
+def sucess(request):
+    return render(request,"sucess.html")
 
 
 

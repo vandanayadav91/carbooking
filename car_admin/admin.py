@@ -1,5 +1,5 @@
 from django.contrib import admin
-from car_admin.models import Service,Blog,Vehicle,Review,Booking,Numbering,centalProcess
+from car_admin.models import Service,Blog,Vehicle,Review,Booking,Numbering,centalProcess,HeroForm
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display1=('ser_icon','ser_title','ser_desc')
@@ -33,6 +33,10 @@ admin.site.register(Numbering,numberingAdmin)
 class centalProcessAdmin(admin.ModelAdmin):
     list_display6=('pro_title','pro_desc','pro_number')
 admin.site.register(centalProcess,centalProcessAdmin)
+
+class HeroFormAdmin(admin.ModelAdmin):
+    list_display6=('car_type','pickup_location','drop_location','pickup_date','pickup_time','drop_date','drop_time')
+admin.site.register(HeroForm,HeroFormAdmin)
 
 
 # Register your models here.
