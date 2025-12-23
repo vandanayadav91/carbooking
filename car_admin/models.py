@@ -95,6 +95,15 @@ class HeroForm(models.Model):
     drop_time=models.CharField(max_length=100)
     
 
+class contactsform(models.Model):
+    your_name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    your_phone=models.CharField(max_length=100)
+    your_projects=models.CharField(max_length=100)
+    subjects=models.CharField(max_length=100)
+    msg=models.TextField()
+    
+
     
 
 

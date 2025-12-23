@@ -39,6 +39,8 @@ urlpatterns = [
     path('testimonial/',views.testimonialpage, name="testimonial"),
     path('numpages/',views.numpages, name="numpages"),
     path('sucess/',views.sucess, name="sucess"),
+    
+
    
 ]
 

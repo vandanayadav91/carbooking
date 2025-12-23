@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from car_admin.models import Service,Vehicle,Blog,Numbering,centalProcess,HeroForm
+from car_admin.models import Service,Vehicle,Blog,Numbering,centalProcess,HeroForm,contactsform
 
 
 
@@ -60,6 +60,18 @@ def BlogPage(request):
     return render(request,"Blog.html",data)
 
 def contactPage(request):
+    if request.method == "POST":
+     contactsform.objects.create(
+            your_name=request.POST.get('your_name'),
+            email=request.POST.get('email'),
+            your_phone=request.POST.get('your_phone'),
+            your_projects=request.POST.get('your_projects'),
+            subjects=request.POST.get('subjects'),
+            msg=request.POST.get('msg'),
+            
+     )
+     return redirect('contact')
+
     return render(request,"Contact.html")
 
 def ServicePage(request):
@@ -88,6 +100,8 @@ def numpages(request):
 
 def sucess(request):
     return render(request,"sucess.html")
+
+
 
 
 
